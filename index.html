@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxury Perfume Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#order-section">Order & Track</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section with Background Image -->
+    <header
+      style="
+        background: url('assets/images-background.jpeg') no-repeat center
+          center/cover;
+      "
+      class="height-width"
+    >
+      <h1>Discover the Essence of Luxury</h1>
+      <p style="color: aliceblue">
+        Premium fragrances for an unforgettable experience.
+      </p>
+      <a href="#products" class="explore-btn">Explore Collection</a>
+    </header>
+
+    <!-- Perfume Product Section -->
+    <section id="products" class="product-container">
+      <div
+        class="product"
+        onclick="showProductDetails('Royal Essence', 'A fragrance of elegance and luxury.', 'Rs1200')"
+      >
+        <img
+          src="assets/perfume-background.jpg"
+          class="height-width"
+          alt="Royal Essence Perfume Bottle"
+        />
+        <h2>Royal Essence</h2>
+        <p>A fragrance of elegance and luxury.</p>
+        <p class="price">Rs1200</p>
+        <button onclick="orderNow(event)">Order Now</button>
+      </div>
+
+      <div
+        class="product"
+        onclick="showProductDetails('Floral Bliss', 'A perfect blend of floral and fresh notes.', 'Rs999')"
+      >
+        <img
+          src="assets/perfume-background.jpg"
+          class="height-width"
+          alt="Floral Bliss Perfume Bottle"
+        />
+        <h2>Floral Bliss</h2>
+        <p>A perfect blend of floral and fresh notes.</p>
+        <p class="price">Rs999</p>
+        <button onclick="orderNow(event)">Order Now</button>
+      </div>
+
+      <div
+        class="product"
+        onclick="showProductDetails('Midnight Oud', 'Deep, mysterious, and long-lasting.', 'Rs1500')"
+      >
+        <img
+          src="assets/perfume-background.jpg"
+          class="height-width"
+          alt="Midnight Oud Perfume Bottle"
+        />
+        <h2>Midnight Oud</h2>
+        <p>Deep, mysterious, and long-lasting.</p>
+        <p class="price">Rs1500</p>
+        <button onclick="orderNow(event)">Order Now</button>
+      </div>
+    </section>
+
+    <!-- Order & Track Section -->
+    <section id="order-section">
+      <h2>Track Your Order</h2>
+      <input type="text" id="order-id" placeholder="Enter Order ID" />
+      <button onclick="trackOrder()">Track Order</button>
+      <p id="order-status"></p>
+    </section>
+
+    <!-- Product Details Modal -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-image" src="" alt="Perfume Image" />
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <p id="modal-price"></p>
+        <button onclick="orderNow(event)">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- Purchase Confirmation Message -->
+    <p id="purchase-message" class="hidden"></p>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2025 Luxury Perfume Store. All rights reserved.</p>
+      <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
